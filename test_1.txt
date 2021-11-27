@@ -1,0 +1,7 @@
+cust, 1_sum_quant, 2_sum_quant, 3_sum_quant
+3
+cust
+1_sum_quant, 1_avg_quant, 2_sum_quant, 3_sum_quant, 3_avg_quant
+1.state='NY', 1.year=2017, 2.state='NJ', 3.state='CT'
+1_sum_quant > 2 * 2_sum_quant or 1_avg_quant > 3_avg_quant
+WITH NY as(SELECT cust, sum(quant) as sum_quant, avg(quant) as avg_quant FROM sales WHERE state = 'NY' and year = 2017 GROUP BY cust), NJ as(SELECT cust, sum(quant) as sum_quant FROM sales WHERE state = 'NJ' GROUP BY cust), CT as(SELECT cust, sum(quant) as sum_quant, avg(quant) as avg_quant FROM sales WHERE state = 'CT' GROUP BY cust) SELECT distinct s.cust, NY.sum_quant, NJ.sum_quant, CT.sum_quant FROM sales as s LEFT JOIN NY on s.cust = NY.cust LEFT JOIN NJ on s.cust = NJ.cust LEFT JOIN CT on s.cust = CT.cust WHERE NY.sum_quant > 2*NJ.sum_quant or NY.avg_quant > CT.avg_quant ORDER BY s.cust asc
