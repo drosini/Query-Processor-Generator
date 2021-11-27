@@ -19,8 +19,9 @@ Instructions:
 Query Arguements File Paramters:
 
 - File Type: .txt
-- Line 1 --> Selected Atributes (S) : 
-         --> seperated by spaces and / or commas
-         --> e.x. cust, 1_sum_quant, 2_sum_quant, 3_sum_quant
+- Line 1 
+-        Selected Atributes (S) 
+-        seperated by spaces and / or commas
+-        e.x. cust, 1_sum_quant, 2_sum_quant, 3_sum_quant
 - Line 2 --> Number of Gouping Variables (n)
 - Line 3 --> Grouping Attributes
