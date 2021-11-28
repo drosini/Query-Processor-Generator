@@ -23,6 +23,6 @@ Query Arguements File Paramters:
 - Line 2 --> Number of Gouping Variables (n)
 - Line 3 --> Grouping Attributes (V): variables for the "GROUP BY" clause
 - Line 4 --> F-Vect (F): format --> Group#_AggregateFunction_TableVariable (EXAMPLE: 1_sum_quant, 1_avg_quant)
-- Line 5 --> Select Condition-Vect (sig)
-- Line 6 --> Having Condition
+- Line 5 --> Select Condition-Vect (sig): Grouping Parameters, format --> Group#.Variable "Operation" Value (EXAMPLE: 1.state=’NY’ 2.state=’NJ’ )
+- Line 6 --> Having Condition (EXAMPLE: 1_sum_quant > 2 * 2_sum_quant or 1_avg_quant > 3_avg_quant )
 - Line 7 --> Query: OPTIONAL, used to produce a table to check against output of generated query, MUST be input on a single line
